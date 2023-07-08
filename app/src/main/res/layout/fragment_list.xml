@@ -5,20 +5,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back_primary"
     tools:context="com.example.yhw2.ListFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_item_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_title"
+            android:textAppearance="@style/TextAppearance.Yhw2.Title"
+            android:layout_marginStart="@dimen/title_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/min_click_area_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_item_navigation_bar">
+
+        <TextView
+            android:id="@+id/number_of_completed_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_completed_tasks"
+            android:textAppearance="@style/TextAppearance.Yhw2.Tint"
+            android:layout_marginStart="@dimen/title_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/visible_button"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginEnd="@dimen/icon_size"
+            android:src="@drawable/visible_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/min_margin"
+        android:paddingVertical="@dimen/min_margin"
+        android:elevation="@dimen/elevation_high"
+        android:background="@drawable/task_field_background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_status_bar"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_new_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:tint="@color/white"
+        android:elevation="@dimen/elevation_high"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_margin="@dimen/standard_margin"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

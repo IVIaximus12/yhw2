@@ -6,12 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/task_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="45sp"
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="@dimen/min_click_area_size"
+        android:layout_height="@dimen/min_click_area_size"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/task_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Someone task text"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/standard_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkbox"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

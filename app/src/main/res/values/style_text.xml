@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.Yhw2.Title" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">@color/label_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/big_title</item>
+    </style>
+
+    <style name="TextAppearance.Yhw2.CommonText" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/label_primary</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="TextAppearance.Yhw2.Tint" parent="TextAppearance.Yhw2.CommonText">
+        <item name="android:textColor">@color/label_tertiary</item>
+    </style>
+</resources>
