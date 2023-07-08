@@ -8,7 +8,8 @@ import com.example.yhw2.R
 import com.example.yhw2.TodoItem
 
 class TodoAdapter (
-    context: Context
+    private val context: Context,
+    private val clickCallback: () -> Unit
 ) : RecyclerView.Adapter<TodoViewHolder>() {
 
     var tasks: List<TodoItem> = emptyList()
@@ -28,5 +29,8 @@ class TodoAdapter (
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.onBind(tasks[position])
+        holder.itemView.setOnClickListener {
+            clickCallback()
+        }
     }
 }
