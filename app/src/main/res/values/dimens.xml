@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="elevation_high">4dp</dimen>
     <dimen name="min_margin">8dp</dimen>
     <dimen name="standard_margin">16dp</dimen>
     <dimen name="icon_size">24dp</dimen>
     <dimen name="min_click_area_size">48dp</dimen>
+    <dimen name="toolbar_high">56dp</dimen>
     <dimen name="title_margin">64dp</dimen>
-    <dimen name="elevation_high">4dp</dimen>
+    <dimen name="info_field_high">72dp</dimen>
+    <dimen name="min_field_high">104dp</dimen>
 
+
+    <dimen name="small_text_size">14sp</dimen>
     <dimen name="text_size">16sp</dimen>
     <dimen name="big_title">32sp</dimen>
 

@@ -5,26 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back_primary"
     tools:context="com.example.yhw2.AddItemFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/toolbar_high"
+        android:padding="@dimen/standard_margin"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <ImageView
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-        <Button
+
+        <TextView
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save_button"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Yhw2.ActiveText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -34,11 +40,106 @@
         android:id="@+id/task_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="104dp"
-        android:textSize="45sp"
-        android:inputType="text"
+        android:background="@drawable/task_field_background"
+        android:gravity="top"
         android:hint="@string/edit_text_hint"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
+        android:inputType="text"
+        android:minHeight="@dimen/min_field_high"
+        android:layout_marginTop="@dimen/min_margin"
+        android:layout_marginHorizontal="@dimen/standard_margin"
+        android:padding="@dimen/standard_margin"
+        android:elevation="@dimen/elevation_high"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"/>
+
+    <LinearLayout
+        android:id="@+id/importance_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/info_field_high"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/min_margin"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/standard_margin"
+        app:layout_constraintTop_toBottomOf="@id/task_text">
+
+        <TextView
+            android:id="@+id/importance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/importance"/>
+
+        <TextView
+            android:id="@+id/importance_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Yhw2.SmallTint"
+            tools:text="Нет"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/divider_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/standard_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/importance_layout">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/time_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/info_field_high"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/standard_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_layout">
+
+        <TextView
+            android:id="@+id/time_todo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_todo"/>
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2 июня 2021"
+            android:textSize="@dimen/small_text_size"
+            android:textAppearance="@style/TextAppearance.Yhw2.ActiveText"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/standard_margin"
+        app:layout_constraintTop_toTopOf="@id/time_layout"
+        app:layout_constraintBottom_toBottomOf="@id/time_layout"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/second_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/icon_size"
+        app:layout_constraintTop_toBottomOf="@id/time_layout"/>
+
+    <TextView
+        android:id="@+id/delete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textColor="@drawable/custom_delete_text_color"
+        app:drawableStartCompat="@drawable/custom_delete_icon"
+        android:enabled="false"
+        android:drawablePadding="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/min_margin"
+        android:padding="@dimen/standard_margin"
+        app:layout_constraintTop_toBottomOf="@id/second_divider"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

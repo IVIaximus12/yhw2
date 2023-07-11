@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextAppearance.Yhw2.Title" parent="TextAppearance.MaterialComponents.Headline4">
+    <style name="TextAppearance.Yhw2.CommonText" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="android:textColor">@color/label_primary</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/big_title</item>
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="TextAppearance.Yhw2.CommonText" parent="TextAppearance.MaterialComponents.Headline6">
+    <style name="TextAppearance.Yhw2.Title" parent="TextAppearance.Yhw2.CommonText">
         <item name="android:textColor">@color/label_primary</item>
-        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textSize">@dimen/big_title</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextAppearance.Yhw2.Tint" parent="TextAppearance.Yhw2.CommonText">
         <item name="android:textColor">@color/label_tertiary</item>
+    </style>
+
+    <style name="TextAppearance.Yhw2.SmallTint" parent="TextAppearance.Yhw2.Tint">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="TextAppearance.Yhw2.ActiveText" parent="TextAppearance.Yhw2.CommonText">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
     </style>
 </resources>

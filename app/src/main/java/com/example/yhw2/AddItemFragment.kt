@@ -3,14 +3,15 @@ package com.example.yhw2
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 class AddItemFragment  : Fragment(R.layout.fragment_add_item) {
 
-    private lateinit var cancelButton: Button
-    private lateinit var saveButton: Button
+    private lateinit var cancelButton: ImageView
+    private lateinit var saveButton: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
