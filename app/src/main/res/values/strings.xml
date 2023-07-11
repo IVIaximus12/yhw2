@@ -7,4 +7,7 @@
     <string name="importance">Важность</string>
     <string name="time_todo">Сделать до</string>
     <string name="delete">Удалить</string>
+    <string name="importance_normal">Нет</string>
+    <string name="importance_high">!! Высокий</string>
+    <string name="importance_low">Низкий</string>
 </resources>

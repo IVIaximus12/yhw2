@@ -43,7 +43,7 @@
         android:background="@drawable/task_field_background"
         android:gravity="top"
         android:hint="@string/edit_text_hint"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:minHeight="@dimen/min_field_high"
         android:layout_marginTop="@dimen/min_margin"
         android:layout_marginHorizontal="@dimen/standard_margin"
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Yhw2.SmallTint"
-            tools:text="Нет"/>
+            android:text="@string/importance_normal"/>
     </LinearLayout>
 
     <FrameLayout
@@ -91,7 +91,7 @@
     </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/time_layout"
+        android:id="@+id/date_layout"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/info_field_high"
         android:orientation="vertical"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@id/divider_layout">
 
         <TextView
-            android:id="@+id/time_todo"
+            android:id="@+id/date_todo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time_todo"/>
@@ -116,11 +116,12 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/date_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/standard_margin"
-        app:layout_constraintTop_toTopOf="@id/time_layout"
-        app:layout_constraintBottom_toBottomOf="@id/time_layout"
+        app:layout_constraintTop_toTopOf="@id/date_layout"
+        app:layout_constraintBottom_toBottomOf="@id/date_layout"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.divider.MaterialDivider
@@ -128,7 +129,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/icon_size"
-        app:layout_constraintTop_toBottomOf="@id/time_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/date_layout"/>
 
     <TextView
         android:id="@+id/delete_button"
