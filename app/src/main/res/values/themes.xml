@@ -19,5 +19,5 @@
         <item name="android:actionButtonStyle">@style/Widget.Yhw2.FloatingActionButton</item>
     </style>
 
-    <style name="Theme.Yhw2" parent="Base.Theme.Yhw2"/>
+    <style name="Theme.Yhw2" parent="Base.Theme.Yhw2" />
 </resources>

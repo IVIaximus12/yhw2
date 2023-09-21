@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,46 +19,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save_button"
-            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.Yhw2.ActiveText"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
         android:id="@+id/task_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/min_margin"
         android:background="@drawable/task_field_background"
+        android:elevation="@dimen/elevation_high"
         android:gravity="top"
         android:hint="@string/edit_text_hint"
         android:inputType="textMultiLine"
         android:minHeight="@dimen/min_field_high"
-        android:layout_marginTop="@dimen/min_margin"
-        android:layout_marginHorizontal="@dimen/standard_margin"
         android:padding="@dimen/standard_margin"
-        android:elevation="@dimen/elevation_high"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/toolbar_layout" />
 
     <LinearLayout
         android:id="@+id/importance_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/info_field_high"
-        android:orientation="vertical"
         android:layout_marginTop="@dimen/min_margin"
         android:gravity="center_vertical"
+        android:orientation="vertical"
         android:paddingHorizontal="@dimen/standard_margin"
         app:layout_constraintTop_toBottomOf="@id/task_text">
 
@@ -67,14 +66,14 @@
             android:id="@+id/importance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/importance"/>
+            android:text="@string/importance" />
 
         <TextView
             android:id="@+id/importance_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.Yhw2.SmallTint"
-            android:text="@string/importance_normal"/>
+            android:text="@string/importance_normal"
+            android:textAppearance="@style/TextAppearance.Yhw2.SmallTint" />
     </LinearLayout>
 
     <FrameLayout
@@ -87,15 +86,15 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </FrameLayout>
 
     <LinearLayout
         android:id="@+id/date_layout"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/info_field_high"
-        android:orientation="vertical"
         android:gravity="center_vertical"
+        android:orientation="vertical"
         android:paddingHorizontal="@dimen/standard_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_layout">
@@ -104,15 +103,15 @@
             android:id="@+id/date_todo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/time_todo"/>
+            android:text="@string/time_todo" />
 
         <TextView
             android:id="@+id/date_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="2 июня 2021"
+            android:textAppearance="@style/TextAppearance.Yhw2.ActiveText"
             android:textSize="@dimen/small_text_size"
-            android:textAppearance="@style/TextAppearance.Yhw2.ActiveText"/>
+            tools:text="2 июня 2021" />
     </LinearLayout>
 
     <androidx.appcompat.widget.SwitchCompat
@@ -120,27 +119,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/standard_margin"
-        app:layout_constraintTop_toTopOf="@id/date_layout"
         app:layout_constraintBottom_toBottomOf="@id/date_layout"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/date_layout" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/second_divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/icon_size"
-        app:layout_constraintTop_toBottomOf="@id/date_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/date_layout" />
 
     <TextView
         android:id="@+id/delete_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/min_margin"
+        android:drawablePadding="@dimen/standard_margin"
+        android:enabled="false"
+        android:padding="@dimen/standard_margin"
         android:text="@string/delete"
         android:textColor="@drawable/custom_delete_text_color"
         app:drawableStartCompat="@drawable/custom_delete_icon"
-        android:enabled="false"
-        android:drawablePadding="@dimen/standard_margin"
-        android:layout_marginTop="@dimen/min_margin"
-        android:padding="@dimen/standard_margin"
-        app:layout_constraintTop_toBottomOf="@id/second_divider"/>
+        app:layout_constraintTop_toBottomOf="@id/second_divider" />
 </androidx.constraintlayout.widget.ConstraintLayout>

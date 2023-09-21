@@ -13,10 +13,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import java.util.Calendar
 
-class AddItemFragment  : Fragment(R.layout.fragment_add_item) {
-    
+class AddItemFragment : Fragment(R.layout.fragment_add_item) {
+
     private lateinit var datePickerDialog: DatePickerDialog
-    
+
     private lateinit var cancelButton: ImageView
     private lateinit var saveButton: TextView
     private lateinit var dateLayout: View
@@ -25,6 +25,7 @@ class AddItemFragment  : Fragment(R.layout.fragment_add_item) {
     private lateinit var importance: TextView
     private lateinit var dateText: TextView
     private lateinit var switch: SwitchCompat
+    private lateinit var deleteButton: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,6 +44,7 @@ class AddItemFragment  : Fragment(R.layout.fragment_add_item) {
         importanceLayout = view.findViewById(R.id.importance_layout)
         importanceValue = view.findViewById(R.id.importance_value)
         importance = view.findViewById(R.id.importance)
+        deleteButton = view.findViewById(R.id.delete_button)
     }
 
     private fun initDatePicker() {
@@ -69,11 +71,11 @@ class AddItemFragment  : Fragment(R.layout.fragment_add_item) {
         }
         cancelButton.setOnClickListener(clickListener)
         saveButton.setOnClickListener(clickListener)
-        
+
         dateLayout.setOnClickListener {
             datePickerDialog.show()
         }
-        
+
         switch.setOnCheckedChangeListener { _, isChecked ->
             dateLayout.isClickable = isChecked
             if (isChecked) {
@@ -101,10 +103,12 @@ class AddItemFragment  : Fragment(R.layout.fragment_add_item) {
                     setImportanceColor(true)
                     importanceValue.text = requireContext().getString(R.string.importance_normal)
                 }
+
                 ID_POPUP_LOW -> {
                     setImportanceColor(true)
                     importanceValue.text = requireContext().getString(R.string.importance_low)
                 }
+
                 ID_POPUP_HIGH -> {
                     setImportanceColor(false)
                     importanceValue.text = requireContext().getString(R.string.importance_high)

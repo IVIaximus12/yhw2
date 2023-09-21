@@ -17,6 +17,5 @@ class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun onBind(todoItem: TodoItem) {
         todoText.text = todoItem.text
         checkBox.isChecked = todoItem.isDone
-
     }
 }

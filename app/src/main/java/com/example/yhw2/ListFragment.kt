@@ -58,12 +58,15 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             } else todoAdapter.tasks = taskList
         }
     }
+
     private fun setRecyclerView() {
-        todoAdapter = TodoAdapter(requireContext()
+        todoAdapter = TodoAdapter(
+            requireContext()
         ) { findNavController().navigate(R.id.action_listFragment_to_addItemFragment) }
 
         val layoutManager = LinearLayoutManager(
-            context, LinearLayoutManager.VERTICAL, false)
+            context, LinearLayoutManager.VERTICAL, false
+        )
 
         todoRecyclerView.adapter = todoAdapter
         todoRecyclerView.layoutManager = layoutManager

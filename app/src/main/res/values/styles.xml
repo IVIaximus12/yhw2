@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name= "Widget.Yhw2.TextView" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget.Yhw2.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textAppearance">@style/TextAppearance.Yhw2.CommonText</item>
     </style>
 
-    <style name= "Widget.Yhw2.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+    <style name="Widget.Yhw2.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="android:colorBackground">@color/blue</item>
     </style>
 </resources>
